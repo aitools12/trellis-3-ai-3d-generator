@@ -1,0 +1,28 @@
+{
+  "name": "aitools12/trellis3_com",
+  "description": "Trellis 3 AI image and video generator metadata package.",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://www.trellis3.com",
+  "keywords": [
+    "trellis3",
+    "trellis-3",
+    "ai",
+    "image",
+    "video",
+    "generator"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Trellis3Com\\": "src/"
+    }
+  },
+  "support": {
+    "source": "https://github.com/aitools12/trellis3_com",
+    "issues": "https://www.trellis3.com",
+    "docs": "https://www.trellis3.com"
+  },
+  "require": {
+    "php": ">=8.0"
+  }
+}
