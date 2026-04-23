@@ -87,6 +87,11 @@ main,
   padding: 72px 0 44px;
 }
 
+.hero-copy {
+  display: grid;
+  gap: 18px;
+}
+
 .hero h1,
 .section h2,
 .cta h2 {
@@ -104,6 +109,36 @@ main,
   max-width: 690px;
   color: var(--muted);
   font-size: 20px;
+}
+
+.hero-summary {
+  max-width: 720px;
+  margin: 0;
+}
+
+.hero-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.hero-points li {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 241, 0.82);
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.hero-points strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 15px;
 }
 
 .eyebrow {
@@ -149,15 +184,86 @@ main,
 .hero-media {
   border: 1px solid var(--line);
   border-radius: 8px;
-  overflow: hidden;
-  background: var(--paper);
+  background: linear-gradient(180deg, rgba(255, 250, 241, 0.96), rgba(245, 238, 226, 0.96));
   box-shadow: 0 28px 80px rgba(45, 37, 25, 0.14);
+  padding: 24px;
 }
 
-.hero-media img {
-  width: 100%;
-  aspect-ratio: 1.35;
-  object-fit: cover;
+.hero-card {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hero-card-label {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(44, 34, 20, 0.08);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-card-score {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.hero-card h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.hero-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.hero-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hero-card-grid article {
+  padding: 14px;
+}
+
+.hero-card-grid span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-card-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hero-card-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  font-weight: 700;
 }
 
 .links {
@@ -199,6 +305,10 @@ main,
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.cards.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 article,
 details {
   border: 1px solid var(--line);
@@ -218,6 +328,80 @@ article img {
 
 h3 {
   margin: 0 0 8px;
+}
+
+.comparison-table {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 241, 0.78);
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 0.72fr 1fr 1fr;
+  border-top: 1px solid var(--line);
+}
+
+.comparison-row:first-child {
+  border-top: 0;
+  background: rgba(44, 34, 20, 0.08);
+  font-weight: 900;
+}
+
+.comparison-row > * {
+  margin: 0;
+  padding: 16px;
+  border-left: 1px solid var(--line);
+}
+
+.comparison-row > *:first-child {
+  border-left: 0;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.prompt-grid,
+.search-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.prompt {
+  display: grid;
+  gap: 8px;
+}
+
+.prompt small,
+.search-links span {
+  color: var(--accent);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.prompt p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.search-links a {
+  display: block;
+}
+
+.search-links strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.site-footer {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto 34px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .split {
@@ -279,8 +463,24 @@ summary {
 
   .cards,
   .cards.three,
-  .steps {
+  .cards.two,
+  .steps,
+  .hero-points,
+  .hero-card-grid,
+  .hero-card-links,
+  .comparison-row,
+  .prompt-grid,
+  .search-links {
     grid-template-columns: 1fr;
+  }
+
+  .comparison-row > * {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .comparison-row > *:first-child {
+    border-top: 0;
   }
 
   .hero {
